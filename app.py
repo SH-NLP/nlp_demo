@@ -68,8 +68,8 @@ def create_app():
             db.session.commit()
             return redirect(url_for("feedback"))
         else:
-            feedback_list = Feedback.query.all()
-            return render_template("feedback.html", feedback_list = feedback_list)
+            feedback_list = Feedback.query.all()[:20]
+            return render_template("feedback.html", feedback_list=feedback_list)
     
     return app
 
