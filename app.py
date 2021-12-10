@@ -58,6 +58,10 @@ def create_app():
     def sensitive():
         return render_template('sensitive.html')
 
+    @app.route('/gpt3')
+    def gpt3():
+        return render_template('gpt3.html')
+
     @app.route('/chatbot')
     def chatbot():
         return render_template('chatbot.html')
