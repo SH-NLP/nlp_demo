@@ -26,6 +26,10 @@ def create_app():
     def dictionary():
         return render_template('dictionary.html')
 
+    @app.route('/ner')
+    def ner():
+        return render_template('ner.html')
+
     @app.route('/feedback')
     def feedback():
         return render_template('feedback.html')
