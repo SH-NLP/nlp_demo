@@ -58,6 +58,10 @@ def create_app():
     def sensitive():
         return render_template('sensitive.html')
 
+    @app.route('/chatbot')
+    def chatbot():
+        return render_template('chatbot.html')
+
     @app.route('/feedback', methods=["GET","POST"])
     def feedback():
         if request.method == 'POST':
