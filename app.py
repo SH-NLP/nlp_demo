@@ -10,7 +10,7 @@ import config
 
 def create_table():
     conn = sqlite3.connect("nlp_demo.db")   # splite3 db 연결
-    conn.execute("CREATE TABLE IF NOT EXISTS Feedback(context TEXT, date TEXT)")   # Board 라는 DB생성
+    conn.execute("CREATE TABLE IF NOT EXISTS Feedback(context TEXT, date TEXT)")
 
 db = SQLAlchemy()
 migrate = Migrate()
