@@ -54,6 +54,10 @@ def create_app():
     def ner():
         return render_template('ner.html')
 
+    @app.route('/sensitive')
+    def sensitive():
+        return render_template('sensitive.html')
+
     @app.route('/feedback', methods=["GET","POST"])
     def feedback():
         if request.method == 'POST':
