@@ -42,7 +42,7 @@ function sendMessage(text, message_side) {
 
 function greet() {
     setTimeout(function () {
-        return sendMessage("Kochat 데모에 오신걸 환영합니다.", 'left');
+        return sendMessage("MOLA 데모에 오신걸 환영합니다.", 'left');
     }, 1000);
 
     setTimeout(function () {
@@ -115,7 +115,7 @@ function onSendButtonClicked() {
     } else {
         if (messageText.includes('안녕')) {
             setTimeout(function () {
-                return sendMessage("안녕하세요. 저는 Kochat 여행봇입니다.", 'left');
+                return sendMessage("안녕하세요. 저는 MOLA 여행봇입니다.", 'left');
             }, 1000);
         } else if (messageText.includes('고마워')) {
             setTimeout(function () {
