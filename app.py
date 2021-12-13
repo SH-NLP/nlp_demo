@@ -7,6 +7,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
 import config
+from requests_naver import requests_naver
+
 
 def create_table():
     conn = sqlite3.connect("nlp_demo.db")   # splite3 db 연결
@@ -38,9 +40,14 @@ def create_app():
     def about():
         return render_template('about.html')
 
-    @app.route('/search')
-    def search():
-        return render_template('search.html')
+    @app.route('/search', methods=["GET", "POST"])
+    def search(context=None):
+        if request.method == 'POST':
+            context = request.form['search']
+            search_results = requests_naver(context)
+            return render_template('search.html', search_results=search_results)
+        else:
+            return render_template('search.html')
 
     @app.route('/qa')
     def qa():
