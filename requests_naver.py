@@ -4,8 +4,7 @@ import json
 
 def requests_naver(enc_text, type="webkr"):
     encText = urllib.parse.quote(enc_text)
-    print(f"https://openapi.naver.com/v1/search/{type}?query=")
-    url = f"https://openapi.naver.com/v1/search/{type}?query=" + enc_text
+    url = f"https://openapi.naver.com/v1/search/{type}?query=" + encText
 
     client_id = "aBtzUhN3jBckA0jDPVbV"
     client_secret = "ZBR7EN05g_"
